@@ -27,16 +27,44 @@ let chapterOneFlashCards = [
     {"chapter":1,"term":"Test Suite","definition":"A set of several test cases for a component or system under test, where the post condition of one test is often used as the precondition for the next one."},
     {"chapter":1,"term":"Test Summary Report","definition":"A document summarizing testing activities and results. It also contains an evaluation of the corresponding test items against exit criteria."},
     {"chapter":1,"term":"Testware","definition":"Artifacts produced during the test process required to plan, design, and execute tests, such as documentation, scripts, inputs, expected results, set-up and clean-up procedures, files, databases, environment, and any additional software or utilities used in testing."},
-    {"chapter":1,"term":"Error Guessing","definition":"A tet design technique where the experience of the tester is used to anticipate what defects might be present in the component or system under test as a result of errors made, and to design tests specifically to expose them."},
+    {"chapter":1,"term":"Error Guessing","definition":"A test design technique where the experience of the tester is used to anticipate what defects might be present in the component or system under test as a result of errors made, and to design tests specifically to expose them."},
     {"chapter":1,"term":"Independence of Testing","definition":"Seperation of responsibilities, which encourages the accomplishment of objectve testing."},
     {"chapter":2,"term":"Commercial Off-The_Shelf (COTS)/Off-The_Shelf Software","definition":"A software product that is developed for the general market, i.e. for a large number of customers, and that is delivered to many customers in indentical format."},
-    {"chapter":2,"term":"Iterative Development Model","definition":"A development lifecycle where a project is broken into a usually large number of iterations. An iteration is a coplete development loop resulting in a release (internal or external) of an executable product, a subset of the final product under development, which grows from iteration to iteration to become the final product."},
+    {"chapter":2,"term":"Iterative Development Model","definition":"A development lifecycle where a project is broken into a usually large number of iterations. An iteration is a complete development loop resulting in a release (internal or external) of an executable product, a subset of the final product under development, which grows from iteration to iteration to become the final product."},
     {"chapter":2,"term":"Incremental Development Model","definition":"A development lifecycle where a project is broken into a series of increments, each of which delivers a portion of the functionality in the overall project requirements. The requriements are prioritized and delivered in priority order in the appropriate increment. In some (but not all) versions of this lifecycle model, each subproject follows a mini V-model with its own design, coding and testing phases."},
     {"chapter":2,"term":"Validation","definition":"Confirmation by examination and through provision of objective eveidence that the requirements for a specific intended use or application have been fulfilled."},
     {"chapter":2,"term":"Verification","definition":"Confirmation by examination and through provision of objective evidence that specific requirements have been fulfilled."},
-    {"chapter":2,"term":"V-Model","definition":"A framework to describe the software development lifecycle activities from requirements specification to maintenance. The V-Model illustrates how testing activities can be integrated into each phase of the software development lifecycle."},
+    {"chapter":2,"term":"V-Model","definition":"A framework to describe the software development lifecycle activities from requirements specification to maintenance. Illustrates how testing activities can be integrated into each phase of the software development lifecycle."},
     {"chapter":2,"term":"Alpha Testing","definition":"Simulated or actual operational testing by potential user/customers or an independent test team at the developers' site, but outside the development organization."},
-    {"chapter":2,"term":"Beta Testing/Field Testing","definition":"Operational testing by potential and/or existing users/customers at an external site not otherwise involved with the developers, to determine whether or not a component or system satisfies the user/customer needs and fits within the business processes. Often employed as a form of external acceptance testing for off-the-shelf software in order to acquire feedback from the market."}
+    {"chapter":2,"term":"Beta Testing/Field Testing","definition":"Operational testing by potential and/or existing users/customers at an external site not otherwise involved with the developers, to determine whether or not a component or system satisfies the user/customer needs and fits within the business processes. Often employed as a form of external acceptance testing for off-the-shelf software in order to acquire feedback from the market."},
+    {"chapter":2,"term":"Component Testing","definition":"The testing of individual software compontents."},
+    {"chapter":2,"term":"Driver","definition":"A software component or test tool that replaces a component that takes care of the control and/or the calling of a component or system."},
+    {"chapter":2,"term":"Functional Requirement","definition":"A requirement that specifies a function that a component or system must perform."},
+    {"chapter":2,"term":"Integration","definition":"The process of combining components or systems into larget assemblies."},
+    {"chapter":2,"term":"Integration Testing","definition":"Testing performed to expos defects in the interface and in the interactions between integrated components or systems."},
+    {"chapter":2,"term":"Non-Functional Requirement","definition":"A requirement that does not relate to functionality, but to attributes such as reliability, efficiency, usability, maintainability and portability."},
+    {"chapter":2,"term":"Robustness Testing","definition":"Testing to determine the robustness of the software product."},
+    {"chapter":2,"term":"Stub","definition":"A skeletal or special-purpose implementation of a software component, used to develop or test a component that calls or is otherwise dependent on it. It replaces a called component."},
+    {"chapter":2,"term":"System Testing","definition":"The process of testing an integrated system to verify that it meets specified requirements."},
+    {"chapter":2,"term":"Test Environment","definition":"An environment containing hardware, instrumentation, simulators, software tools, and other support elements to conduct a test."},
+    {"chapter":2,"term":"Test Level","definition":"group of test activities that are organized and managed together. A test level is linked to the responsibilies in a project. Examples are component test, integration test, system test and acceptance test."},
+    {"chapter":2,"term":"Test-Driven Development","definition":"A way of developing software where the test cases are developed, and often automated, before the software is developed to run those test cases."},
+    {"chapter":2,"term":"User Acceptance Testing/Acceptance Testing/Acceptance","definition":"Formal testing with respect to user needs, requirements, and business processes conducted to determine whether or not a system satisfies the acceptance criteria and to enable the user, customers or other authorized entity to determine whether or not to accept the system."},
+    {"chapter":2,"term":"Black-Box Testing","definition":"Testing, either functional or non-functional, without reference to the internal structure of the component or system."},
+    {"chapter":2,"term":"Code Coverage","definition":"An analysis method that determines which parts of the software have been executed by the test suite and which parts have not been executed, e.g., statment coverage, decision coverage, or condition coverage."},
+    {"chapter":2,"term":"Functional Testing","definition":"Testing based on an analysis of the specification of the functionality of a component or system."},
+    {"chapter":2,"term":"Interoperability Testing","definition":"The process of testing to detrmine that interoperability of a software product."},
+    {"chapter":2,"term":"Load Testing","definition":"A type of performance testing conducted to evaluate the behavior of a component or system with increasing load, e.g. numbers of parallel users and/or numbers of transactions, to determine what load can be handled by the component or system."},
+    {"chapter":2,"term":"Maintainability Testing","definition":"The process of testing to determine the maintainability of a software product."},
+    {"chapter":2,"term":"Performance Testing","definition":"The process of testing to determine the performance of a software product."},
+    {"chapter":2,"term":"Portability Testing","definition":"The process of testing to determine the portability of a software product."},
+    {"chapter":2,"term":"Reliability Testing","definition":"The process of testing to determine the reliability of a software product."},
+    {"chapter":2,"term":"Security Testing","definition":"Testing to determine the security of the software product."},
+    {"chapter":2,"term":"Stress Testing","definition":"A type of performance testing conducted to evaluate a system or component at or beyond the limits of its anticipated or specified workloads, or with reduced availability of resources such as access to memory or servers."},
+    {"chapter":2,"term":"Usability Testing","definition":"Testing to determine the extent to which the software product is understood, easy to learn, easy to operate and attractive to the users under specified conditions."},
+    {"chapter":2,"term":"White-Box Testing/Structural Testing","definition":"Testing based on the analysis of the internal structure of the component or system."},
+    {"chapter":2,"term":"Impact Analysis","definition":"The assessment of change to the layers of development documentation, test documentation and components, in order to implement a given change to a specified requriement."},
+    {"chapter":2,"term":"Maintenance Testing","definition":"Tesing the changes to an operational system or the impact of a changed environment to an operational system."}
 ];
 let possibleAnswers=["A","B","C","D"];
 
@@ -97,34 +125,43 @@ function getFlashCardPageData() {
 function correctSelection(answer) {
     let resultElement = document.getElementById("result");
     resultElement.innerHTML = "The correct answer is " + answer;
+    resultElement.className = "correct";
     return;
 }
 
 function incorrectSelection(answer) {
     let resultElement = document.getElementById("result");
     resultElement.innerHTML = "Incorrect, the correct answer is " + answer;
+    resultElement.className = "incorrect";
     return;
 }
 
 function clearSelection() {
     let resultElement = document.getElementById("result");
     resultElement.innerHTML = "";
+    resultElement.className="correct";
     return;
 }
 
-//Term section
+function updatePage(fc) {
+    //Term Section
+    let termElement=document.getElementById("term");
+    termElement.innerHTML=fc.term;
+    //MC section
+    let mcAElement=document.getElementById("A");
+    mcAElement.innerHTML=fc.mc[0];
+    let mcBElement=document.getElementById("B");
+    mcBElement.innerHTML=fc.mc[1];
+    let mcCElement=document.getElementById("C");
+    mcCElement.innerHTML=fc.mc[2];
+    let mcDElement=document.getElementById("D");
+    mcDElement.innerHTML=fc.mc[3];
+}
+
+//Get fc
 let fc = getFlashCardPageData();
-let termElement=document.getElementById("term");
-termElement.innerHTML=fc.term;
-//MC section
-let mcAElement=document.getElementById("A");
-mcAElement.innerHTML=fc.mc[0];
-let mcBElement=document.getElementById("B");
-mcBElement.innerHTML=fc.mc[1];
-let mcCElement=document.getElementById("C");
-mcCElement.innerHTML=fc.mc[2];
-let mcDElement=document.getElementById("D");
-mcDElement.innerHTML=fc.mc[3];
+updatePage(fc);
+
 // ARM mc buttons.
 let aBtn = document.getElementById("aButton");
 aBtn.addEventListener("click", function() {
@@ -166,16 +203,5 @@ let anotherBtn = document.getElementById("another");
 anotherBtn.addEventListener("click", function() {
     clearSelection();
     fc=getFlashCardPageData();
-    //Term section
-    termElement=document.getElementById("term");
-    termElement.innerHTML=fc.term;
-    //MC section
-    mcAElement=document.getElementById("A");
-    mcAElement.innerHTML=fc.mc[0];
-    mcBElement=document.getElementById("B");
-    mcBElement.innerHTML=fc.mc[1];
-    mcCElement=document.getElementById("C");
-    mcCElement.innerHTML=fc.mc[2];
-    mcDElement=document.getElementById("D");
-    mcDElement.innerHTML=fc.mc[3];
+    updatePage(fc);
 })
