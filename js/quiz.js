@@ -25,7 +25,7 @@ let chapterOneFlashCards = [
     {"chapter":1,"term":"Test Procedure/Test Procedure Specification","definition":"A document specifying a sequence of actions for the execution of a test. Also known as test script or manual test script."},
     {"chapter":1,"term":"Test Policy","definition":"A high level document describing the principles, approach and major objectives of the organization regarding testing."},
     {"chapter":1,"term":"Test Suite","definition":"A set of several test cases for a component or system under test, where the post condition of one test is often used as the precondition for the next one."},
-    {"chapter":1,"term":"A document summarizing testing activities and results. It also contains an evaluation of the corresponding test items against exit criteria."},
+    {"chapter":1,"term":"Test Summary Report","definition":"A document summarizing testing activities and results. It also contains an evaluation of the corresponding test items against exit criteria."},
     {"chapter":1,"term":"Testware","definition":"Artifacts produced during the test process required to plan, design, and execute tests, such as documentation, scripts, inputs, expected results, set-up and clean-up procedures, files, databases, environment, and any additional software or utilities used in testing."},
     {"chapter":1,"term":"Error Guessing","definition":"A tet design technique where the experience of the tester is used to anticipate what defects might be present in the component or system under test as a result of errors made, and to design tests specifically to expose them."},
     {"chapter":1,"term":"Independence of Testing","definition":"Seperation of responsibilities, which encourages the accomplishment of objectve testing."},
