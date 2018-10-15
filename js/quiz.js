@@ -1,4 +1,4 @@
-let chapterOneFlashCards = [
+let allFlashCards = [
     {"chapter":1,"term":"Defect/Bug/Fault","definition":"A flow in a component or system that can cause the component or system to fail to perform its required function."},
     {"chapter":1,"term":"Error/Mistake","definition":"A human action that produces an incorrect result."},
     {"chapter":1,"term":"Failure","definition":"Deviation of the component or system from its expected delivery, service or result."},
@@ -72,26 +72,28 @@ function getRandomInt(min,max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+//Get the data that will be placed on the page.
+//After a term, 4 definitions including the correct one.
+//The multiple choice letter that contains the correct answer.
+//
 function getFlashCardPageData() {
     let pageData={};
     let ranFlashCard = -1;
-    let getFlashCard=getRandomInt(0,chapterOneFlashCards.length-1);
+    let getFlashCard=getRandomInt(0,allFlashCards.length-1);
 
     //Store Term
     pageData.term="";
-    pageData.term=chapterOneFlashCards[getFlashCard].term;
-    let FlashCardChapter = chapterOneFlashCards[getFlashCard].chapter;
+    pageData.term=allFlashCards[getFlashCard].term;
+    let FlashCardChapter = allFlashCards[getFlashCard].chapter;
 
-    //let term = chapterOneFlashCards[getFlashCard].term;
-    //let termElement=document.getElementById("term");
-    //termElement.innerHTML=term;
     //3 additional defintions for the multiple choice section. 
     //Must be three unique numbers and must not include the actual answer.
+    //Initial array to -1 in each element.
     let fourDefinitions=[-1,-1,-1,-1];
     //Place the correct answer randomly in the defintions array.
     let offset=getRandomInt(0,3);
     fourDefinitions[offset]=getFlashCard;
-    //Save the correct answer to compare against.
+    //Save the correct answer letter to compare against.
     pageData.correctAnswer=-1;
     pageData.correctAnswer=possibleAnswers[offset];
     //replace will be the offset where we put one of the three wrong definitions.
@@ -99,9 +101,9 @@ function getFlashCardPageData() {
 
     //Replace all -1 entries with a unique definition.
     while (fourDefinitions.indexOf(-1) !== -1) {
-        ranFlashCard=getRandomInt(0,chapterOneFlashCards.length-1);
+        ranFlashCard=getRandomInt(0,allFlashCards.length-1);
         //Definitions should be from the same chapter.
-        if (FlashCardChapter !== chapterOneFlashCards[ranFlashCard].chapter) {
+        if (FlashCardChapter !== allFlashCards[ranFlashCard].chapter) {
             continue;
         }
         //Already exists in array get another one.
@@ -114,14 +116,17 @@ function getFlashCardPageData() {
         }
     }
     pageData.mc=[];
-    pageData.mc[0]=chapterOneFlashCards[fourDefinitions[0]].definition;
-    pageData.mc[1]=chapterOneFlashCards[fourDefinitions[1]].definition;
-    pageData.mc[2]=chapterOneFlashCards[fourDefinitions[2]].definition;
-    pageData.mc[3]=chapterOneFlashCards[fourDefinitions[3]].definition;
+    //Could have done this in a loop but since there are only four...
+    pageData.mc[0]=allFlashCards[fourDefinitions[0]].definition;
+    pageData.mc[1]=allFlashCards[fourDefinitions[1]].definition;
+    pageData.mc[2]=allFlashCards[fourDefinitions[2]].definition;
+    pageData.mc[3]=allFlashCards[fourDefinitions[3]].definition;
 
     return (pageData);
 }
 
+// We have picked the correct selection, show the success message
+// using the succes color.
 function correctSelection(answer) {
     let resultElement = document.getElementById("result");
     resultElement.innerHTML = "The correct answer is " + answer;
@@ -129,6 +134,8 @@ function correctSelection(answer) {
     return;
 }
 
+// We have picked the incorrect selection, show the correct answer
+// using the failure color.
 function incorrectSelection(answer) {
     let resultElement = document.getElementById("result");
     resultElement.innerHTML = "Incorrect, the correct answer is " + answer;
@@ -136,6 +143,8 @@ function incorrectSelection(answer) {
     return;
 }
 
+// Let's clear the result field in case it may have data from the previous
+// result.
 function clearSelection() {
     let resultElement = document.getElementById("result");
     resultElement.innerHTML = "";
@@ -143,6 +152,7 @@ function clearSelection() {
     return;
 }
 
+// Update the html page with the data.
 function updatePage(fc) {
     //Term Section
     let termElement=document.getElementById("term");
@@ -158,11 +168,11 @@ function updatePage(fc) {
     mcDElement.innerHTML=fc.mc[3];
 }
 
-//Get fc
+//Get initial flash card.
 let fc = getFlashCardPageData();
 updatePage(fc);
 
-// ARM mc buttons.
+// ARM all multiple choice buttons.
 let aBtn = document.getElementById("aButton");
 aBtn.addEventListener("click", function() {
     if (fc.correctAnswer === "A") {
@@ -199,6 +209,7 @@ dBtn.addEventListener("click", function() {
     }
 });
 
+// Arm the get next flashcard button.
 let anotherBtn = document.getElementById("another");
 anotherBtn.addEventListener("click", function() {
     clearSelection();
