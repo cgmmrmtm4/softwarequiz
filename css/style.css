@@ -1,13 +1,90 @@
-legend {
-    background-color: #000;
-    color: #fff;
-    padding: 3px 6px;
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
 }
 
-.output {
-    font: 1rem 'Fira Sans', sans-serif;
+article, aside, figure, footer, header, hgroup, nav, section {
+    display: block;
 }
 
-input {
-    margin: .4rem;
+body {
+    width: 500px;
+    height: 800px;
+    padding: 0px;
+    margin: auto;
+    background-color: whitesmoke;
+}
+
+#headMenu, #footer {
+    margin: auto;
+    width: 90%;
+    height: 30px;
+    padding-bottom: 30px;
+    background-color: lightblue;
+}
+
+#headMenu h1 {
+    text-align: center;
+    font-size: 30px;
+}
+
+#main {
+    margin: auto;
+    width: 90%;
+    height: 730px;
+    background-color: lightblue;
+}
+
+#main h2 {
+    text-align: left;
+    font-size: 20px;
+    padding-bottom: 10px;
+    margin-left: 5px;
+}
+
+#term {
+    text-align: left;
+    font-size: 19px;
+    padding-bottom: 10px;
+    margin-left: 10px;
+}
+
+td {
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#aButton, #bButton, #cButton, #dButton {
+    background-color: green;
+    color: white;
+}
+
+#A, #B, #C, #D {
+    font-size: 18px;
+}
+
+#result {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#another {
+    background-color: blue;
+    color: white;
+}
+
+.correct {
+    color: darkgreen;
+    font-size: 20px;
+}
+
+.incorrect {
+    color: red;
+    font-size: 20px;
 }
