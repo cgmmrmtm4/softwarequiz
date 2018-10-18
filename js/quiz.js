@@ -208,12 +208,134 @@ function updatePage(fc) {
     //MC section
     let mcAElement=document.getElementById("A");
     mcAElement.innerHTML=fc.mc[0];
+    mcAElement.className="info";
     let mcBElement=document.getElementById("B");
     mcBElement.innerHTML=fc.mc[1];
+    mcBElement.className="info";
     let mcCElement=document.getElementById("C");
     mcCElement.innerHTML=fc.mc[2];
+    mcCElement.className="info";
     let mcDElement=document.getElementById("D");
     mcDElement.innerHTML=fc.mc[3];
+    mcDElement.className="info";
+}
+
+function NextTermCallBack() {
+    clearSelection();
+    fc=getFlashCardPageData();
+    updatePage(fc);
+    disarmNextTermButton();
+    armMCButtons(fc);
+    return;
+}
+
+function disarmNextTermButton() {
+    let anotherBtn = document.getElementById("another");
+    anotherBtn.removeEventListener("click", NextTermCallBack);
+    anotherBtn.className="inactive";
+    return;
+}
+
+function armNextTermButton() {
+    let anotherBtn = document.getElementById("another");
+    anotherBtn.addEventListener("click", NextTermCallBack);
+    anotherBtn.className="active";
+    return;
+}
+
+function disarmMCButtons() {
+    let aBtn = document.getElementById("aButton");
+    aBtn.removeEventListener("click", aCallBack);
+    aBtn.className="unarmed";
+    let bBtn = document.getElementById("bButton");
+    bBtn.removeEventListener("click", bCallBack);
+    bBtn.className="unarmed";
+    let cBtn = document.getElementById("cButton");
+    cBtn.removeEventListener("click", cCallBack);
+    cBtn.className="unarmed";
+    let dBtn = document.getElementById("dButton");
+    dBtn.removeEventListener("click", dCallBack);
+    dBtn.className="unarmed";
+}
+
+function aCallBack() {
+    let mcAElement = document.getElementById("A");
+    if (fc.correctAnswer === "A") {
+        mcAElement.className="correct";
+        correctSelection(fc.correctAnswer);
+    } else {
+        mcAElement.className="incorrect";
+        let correctElement=document.getElementById(fc.correctAnswer);
+        correctElement.className="correct";
+        incorrectSelection(fc.correctAnswer);
+    }
+    disarmMCButtons();
+    armNextTermButton();
+}
+
+function bCallBack() {
+    let mcBElement = document.getElementById("B");
+    if (fc.correctAnswer === "B") {
+        mcBElement.className="correct";
+        correctSelection(fc.correctAnswer);
+    } else {
+        mcBElement.className="incorrect";
+        let correctElement=document.getElementById(fc.correctAnswer);
+        correctElement.className="correct";
+        incorrectSelection(fc.correctAnswer);
+    }
+    disarmMCButtons();
+    armNextTermButton();
+}
+
+function cCallBack() {
+    let mcCElement = document.getElementById("C");
+    if (fc.correctAnswer === "C") {
+        mcCElement.className="correct";
+        correctSelection(fc.correctAnswer);
+    } else {
+        mcCElement.className="incorrect";
+        let correctElement=document.getElementById(fc.correctAnswer);
+        correctElement.className="correct";
+        incorrectSelection(fc.correctAnswer);
+    }
+    disarmMCButtons();
+    armNextTermButton();
+}
+
+function dCallBack() {
+    let mcDElement = document.getElementById("D");
+    if (fc.correctAnswer === "D") {
+        mcDElement.className="correct";
+        correctSelection(fc.correctAnswer);
+    } else {
+        mcDElement.className="incorrect";
+        let correctElement=document.getElementById(fc.correctAnswer);
+        correctElement.className="correct";
+        incorrectSelection(fc.correctAnswer);
+    }
+    disarmMCButtons();
+    armNextTermButton();
+}
+
+function armMCButtons(fc) {
+    let aBtn = document.getElementById("aButton");
+    aBtn.addEventListener("click", aCallBack);
+    aBtn.className="armed";
+
+    let bBtn = document.getElementById("bButton");
+    bBtn.addEventListener("click", bCallBack);
+    bBtn.className="armed";
+
+    let cBtn = document.getElementById("cButton");
+    cBtn.addEventListener("click", cCallBack);
+    cBtn.className="armed";
+
+    let dBtn = document.getElementById("dButton");
+    dBtn.addEventListener("click", dCallBack);
+    dBtn.className="armed";
+    
+    return
 }
 
 //Let's keep score for fun
@@ -225,46 +347,5 @@ let fc = getFlashCardPageData();
 updatePage(fc);
 
 // ARM all multiple choice buttons.
-let aBtn = document.getElementById("aButton");
-aBtn.addEventListener("click", function() {
-    if (fc.correctAnswer === "A") {
-        correctSelection(fc.correctAnswer);
-    } else {
-        incorrectSelection(fc.correctAnswer);
-    }
-});
+armMCButtons(fc);
 
-let bBtn = document.getElementById("bButton");
-bBtn.addEventListener("click", function() {
-    if (fc.correctAnswer === "B") {
-        correctSelection(fc.correctAnswer);
-    } else {
-        incorrectSelection(fc.correctAnswer);
-    }
-});
-
-let cBtn = document.getElementById("cButton");
-cBtn.addEventListener("click", function() {
-    if (fc.correctAnswer === "C") {
-        correctSelection(fc.correctAnswer);
-    } else {
-        incorrectSelection(fc.correctAnswer);
-    }
-});
-
-let dBtn = document.getElementById("dButton");
-dBtn.addEventListener("click", function() {
-    if (fc.correctAnswer === "D") {
-        correctSelection(fc.correctAnswer);
-    } else {
-        incorrectSelection(fc.correctAnswer);
-    }
-});
-
-// Arm the get next flashcard button.
-let anotherBtn = document.getElementById("another");
-anotherBtn.addEventListener("click", function() {
-    clearSelection();
-    fc=getFlashCardPageData();
-    updatePage(fc);
-})
