@@ -69,9 +69,14 @@ td {
     padding-right: 5px;
 }
 
-#aButton, #bButton, #cButton, #dButton {
+.armed {
     background-color: green;
     color: white;
+}
+
+.unarmed {
+    background-color: grey;
+    color: black;
 }
 
 #A, #B, #C, #D {
@@ -83,11 +88,6 @@ td {
     padding-bottom: 10px;
 }
 
-#another {
-    background-color: blue;
-    color: white;
-}
-
 .correct {
     color: darkgreen;
     font-size: 20px;
@@ -96,4 +96,14 @@ td {
 .incorrect {
     color: red;
     font-size: 20px;
+}
+
+.inactive {
+    color: black;
+    background-color: grey;
+}
+
+.active {
+    background-color: blue;
+    color: white;
 }
